@@ -64,4 +64,4 @@ Contributions are welcome! If you'd like to improve the project, please follow t
 This project is licensed under the MIT License.
 
 ---
-Developed with ❤️ by [Your Name/Company]
+Developed with ❤️ by [Pricne Sharma]
