@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ladies Smart Choice - Premium Fashion Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <div class="top-nav">
+    <div class="container">
+      <div class="top-nav-left">
+        <a href="#about">About Us</a>
+        <a href="#tracking">Order Tracking</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#faqs">FAQs</a>
+      </div>
+      <div class="top-nav-right">
+        <select class="lang-selector">
+          <option>English</option>
+          <option>Hindi</option>
+        </select>
+        <select class="currency-selector">
+          <option>INR</option>
+          <option>USD</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header>
+    <div class="container">
+      <div class="header-main">
+        <!-- Logo -->
+        <div class="logo">
+          <h1>Ladies <span class="logo-pink">SMART CHOICE</span></h1>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <select class="category-dropdown">
+            <option>All categories</option>
+            <option>Premium Woolen</option>
+            <option>Velvet</option>
+            <option>Russian Crape</option>
+            <option>Paper Silk</option>
+            <option>Banarasi Silk</option>
+          </select>
+          <input type="text" class="search-input" placeholder="Search for products...">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <div class="help-info">
+            <i class="fas fa-phone"></i>
+            <span>Need Help? <strong>+001 123 456 789</strong></span>
+          </div>
+          <div class="action-icons">
+            <button class="icon-btn" onclick="toggleUserMenu()">
+              <i class="fas fa-user"></i>
+            </button>
+            <button class="icon-btn wishlist-btn" onclick="toggleWishlist()">
+              <i class="fas fa-heart"></i>
+              <span class="badge" id="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn cart-btn-header" onclick="toggleCart()">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge" id="cart-count">0</span>
+            </button>
+            <button class="chat-btn">Chat</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Navigation Bar -->
+      <div class="category-nav">
+        <button class="shop-categories-btn">
+          <i class="fas fa-bars"></i> Shop Categories
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="category-links">
+          <a href="#" onclick="filterCategory('premium-woolen'); return false;">Premium Woolen</a>
+          <a href="#" onclick="filterCategory('velvet'); return false;">Velvet</a>
+          <a href="#" onclick="filterCategory('russian-crape'); return false;">Russian Crape</a>
+          <a href="#" onclick="filterCategory('paper-silk'); return false;">Paper Silk</a>
+          <a href="#" onclick="filterCategory('banarasi-silk'); return false;">Banarasi Silk</a>
+          <a href="#" onclick="filterCategory('new-arrivals'); return false;">New Arrivals</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-left">
+        <button class="explore-btn">Explore Styling</button>
+      </div>
+      <div class="hero-right">
+        <div class="collection-info">
+          <div class="silk-mark-logo">
+            <div class="butterfly-icon">🦋</div>
+          </div>
+          <h3>SILK MARK</h3>
+          <p>COLLECTION : PADMINI</p>
+          <button class="shop-now-btn">SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section id="products" class="products-grid"></section>
+    </div>
+  </main>
+
+  <!-- Shopping Cart Sidebar -->
+  <section id="cart" class="cart hidden">
+    <div class="cart-header">
+      <h2>Your Shopping Cart</h2>
+      <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <strong>Total: ₹<span id="cart-total">0.00</span></strong>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </section>
+
+  <!-- Wishlist Sidebar -->
+  <section id="wishlist" class="wishlist hidden">
+    <div class="wishlist-header">
+      <h2>Your Wishlist</h2>
+      <button class="close-wishlist" onclick="toggleWishlist()"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="wishlist-items" class="wishlist-items"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <!-- Newsletter Section -->
+    <div class="newsletter-section">
+      <div class="container">
+        <h2 class="newsletter-title">Join the Smart Choice Club</h2>
+        <p class="newsletter-subtitle">Subscribe to our newsletter and get 10% off your first purchase.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Links Section -->
+    <div class="footer-links-section">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3 class="footer-brand-name">LadiesSmartChoice</h3>
+            <p class="footer-tagline">Your ultimate destination for trendy women's fashion.</p>
+            <p class="footer-copyright">© 2024 Ladies Smart Choice. All rights reserved.</p>
+          </div>
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h4 class="footer-column-title">POLICY</h4>
+              <ul class="footer-links">
+                <li><a href="#terms">Terms and Conditions</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-column-title">NEW COLUMN</h4>
+              <ul class="footer-links">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-column-title">NEW COLUMN</h4>
+              <ul class="footer-links">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
